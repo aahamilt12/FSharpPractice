@@ -54,6 +54,7 @@
     <None Include="MultiplesOfThreeAndFive.fsx" />
     <None Include="FibonacciEvenNumbers.fsx" />
     <None Include="LargestPrimeFactor.fsx" />
+    <None Include="LargestPalindromeProduct.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
