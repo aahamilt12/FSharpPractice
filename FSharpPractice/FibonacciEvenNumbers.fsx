@@ -1,14 +1,8 @@
 ﻿// Practice Problem 2 Even Fibonacci numbers https://projecteuler.net/problem=2
+    
+let fib = List.unfold (fun num ->
+    if (fst num > 4000000) then None
+    else Some(fst num + snd num, (snd num, fst num + snd num))) (1,1)
 
-let rec NextFibNum n = if n <= 2 then 1
-                       elif n >= 4000000 then -1
-                       else NextFibNum (n - 1) + NextFibNum (n - 2)
-
-// still needs work
-let mutable KeepGoing = true
-let mutable n = 0
-let FibList = []
-while KeepGoing do
-    let fibAppend = NextFibNum n
-    if fibAppend > -1 then List.append FibList fibAppend
-    n <- n + 1
+let evens = List.filter (fun x -> x % 2 = 0) fib
+let sum = List.sum evens
